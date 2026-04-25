@@ -1,0 +1,221 @@
+:root {
+    --primary: #a855f7;
+    --secondary: #3b82f6;
+    --bg: #030712;
+    --text: #f9fafb;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Aurora Background */
+.aurora-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #020617;
+    overflow: hidden;
+}
+
+.aurora-blob {
+    position: absolute;
+    width: 80vw;
+    height: 80vw;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    mix-blend-mode: screen;
+}
+
+.one {
+    background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+    top: -20%;
+    left: -10%;
+}
+
+.two {
+    background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+    bottom: -20%;
+    right: -10%;
+}
+
+.three {
+    background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+    top: 20%;
+    right: 10%;
+}
+
+.four {
+    background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+    bottom: 20%;
+    left: 10%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 6, 23, 0.4);
+    backdrop-filter: contrast(120%) brightness(100%);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.btn-sm {
+    background: var(--glass);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10vh 5% 5vh;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 span {
+    display: block;
+}
+
+p.reveal-text-sub {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.5);
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.card {
+    padding: 2.5rem;
+    border-radius: 24px;
+    text-align: left;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+}
